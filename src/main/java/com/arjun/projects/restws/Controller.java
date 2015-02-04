@@ -19,14 +19,14 @@ public class Controller {
 		return new ResponseEntity<User>(UserService.addUser(user), HttpStatus.OK);
 	}
 	
-	@RequestMapping(method= RequestMethod.PUT, value = "/{user}")
+	@RequestMapping(method= RequestMethod.PUT, value = "/{userid}")
 	ResponseEntity<User> updateUser(@PathVariable int userid, @RequestBody User user) {
 		return new ResponseEntity<User>(UserService.updateUser(user), HttpStatus.OK);
 	}
 	
-	@RequestMapping(method= RequestMethod.GET, value = "/{user}")
-	ResponseEntity<User> getUser(@PathVariable int user) {
-		return new ResponseEntity<User>(UserService.getUser(user), HttpStatus.NOT_FOUND);
+	@RequestMapping(method= RequestMethod.GET, value = "/{userid}")
+	ResponseEntity<User> getUser(@PathVariable int userid) {
+		return new ResponseEntity<User>(UserService.getUser(userid), HttpStatus.OK);
 	}
 	
 	@RequestMapping(method= RequestMethod.GET, value = "/")

@@ -12,12 +12,13 @@ public class UserService {
 		return MyDB.insert(user);
 	}
 	
-	public static void deleteUser(int userid) {
-		MyDB.delete(userid);
+	public static boolean deleteUser(int userid) {
+		return MyDB.delete(userid);
 	}
 	
-	public static User updateUser(User u) {
-		return MyDB.insert(u);
+	public static User updateUser(User user) {
+		MyDB.delete(user.getUserid());
+		return MyDB.insert(user);
 	}
 
 	public static ArrayList<User> getUsers() {
